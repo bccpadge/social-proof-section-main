@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor]()
-- Live Site URL: [Github Pages]()
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/social-proof-section-using-flexbox-and-css-grid-ihVH4An5dn)
+- Live Site URL: [Github Pages](https://bccpadge.github.io/social-proof-section-main/)
 
 ## My process
 
