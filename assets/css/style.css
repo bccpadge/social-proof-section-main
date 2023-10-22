@@ -1,0 +1,300 @@
+/* !css variables */
+:root {
+  /* !colors */
+  --clr-pink: 333 80% 67%;
+  --clr-magenta-100: 300 24% 96%;
+  --clr-magenta-200: 303 10% 53%;
+  --clr-magenta-300: 300 43% 22%;
+  --clr-white: 0 0% 100%;
+
+  /* !typography */
+  --fs-body: 0.9375rem;
+  --fw-500: 500;
+  --fw-700: 700;
+  --ff-league-spartan: "League Spartan", sans-serif;
+
+  /*! spacing */
+  --spacing-100: 1rem;
+  --spacing-200: 3rem;
+  --spacing-300: 3.125rem;
+  --spacing-400: 4.5rem;
+}
+
+/* !reset */
+/* !Box sizing rules */
+*,
+*:before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* !Remove defaut margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+/* !Remove list styles on ul, ol elements* with class */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* !Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* !Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* !A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* !Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* !Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* !Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* !sometimes referred to as .sr-only */
+.visually-hidden:not(:focus):not(:active):not(:focus-within) {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* !general styles */
+body {
+  font: var(--fs-body) var(--ff-league-spartan);
+  text-align: center;
+  padding-block: var(--spacing-400) var(--spacing-100);
+  background-image: url("../images/bg-pattern-top-mobile.svg"),
+    url("../images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right;
+}
+
+/* !utility classes */
+main {
+  display: grid;
+  gap: var(--spacing-200) var(--spacing-100);
+}
+
+.container {
+  width: min(100% - 2em, 70rem);
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+  gap: var(--_gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--_gap, 1rem);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-pink {
+  color: hsl(var(--clr-pink));
+}
+
+.font-bold {
+  font-weight: var(--fw-700);
+}
+
+/* !header styles */
+.header__title {
+  font-size: clamp(2rem, 1.6479rem + 1.5023vw, 3rem);
+  color: hsl(var(--clr-magenta-300));
+  line-height: 1;
+  max-width: 12ch;
+  margin-inline-end: 0.25em;
+}
+
+.header__description {
+  --_fs-description: 1rem;
+  font-size: var(--_fs-description);
+  color: hsl(var(--clr-magenta-200));
+  font-weight: var(--fw-500);
+  margin-inline: var(--spacing-100);
+}
+
+/* !rating styles */
+.ratings > * + * {
+  margin-block-start: 1rem;
+}
+
+.rating__item {
+  --_rating-radius: 0.625rem;
+  font-weight: var(--fw-700);
+  background-color: hsl(var(--clr-magenta-100));
+  color: hsl(var(--clr-magenta-300));
+  max-width: 25rem;
+  margin-inline: auto;
+  padding: var(--spacing-100);
+  border-radius: var(--_rating-radius);
+}
+
+.rating__item::before {
+  content: "";
+  width: 26%;
+  height: 1rem;
+  display: block;
+  margin-inline: auto;
+  background-image: url("../images/icon-star.svg");
+  background-repeat: space;
+}
+
+/* !testimonials styles */
+.testimonials {
+  --_test-spacing: 2rem;
+  flex-direction: column;
+  padding-block-end: var(--spacing-300);
+}
+
+.testimonials figure {
+  --_test-radius: 0.5rem;
+  padding: var(--_test-spacing);
+  border-radius: var(--_test-radius);
+  max-width: 20rem;
+  margin-inline: auto;
+  background-color: hsl(var(--clr-magenta-300));
+  color: hsl(var(--clr-white));
+}
+
+.testimonials figure img {
+  --_image-width: 2.5rem;
+  border-radius: 50%;
+  width: var(--_image-width);
+}
+
+.testimonials figure blockquote {
+  margin-block-start: 1rem;
+}
+
+/* !attribution */
+.attribution {
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* !media queries */
+@media (max-width: 50em) {
+  .header__title {
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 50em) {
+  body {
+    background-image: url("../images/bg-pattern-top-desktop.svg"),
+      url("../images/bg-pattern-bottom-desktop.svg");
+    background-size: auto, 66%;
+  }
+
+  main {
+    grid-template-columns: 1fr 1.5fr;
+    text-align: left;
+  }
+
+  header {
+    grid-column: 1/2;
+  }
+
+  .header__description {
+    --_fs-description: 1.125rem;
+  }
+
+  .header__description,
+  .rating__item::before {
+    margin-inline: 0;
+  }
+
+  .ratings {
+    grid-column: 2/3;
+    align-self: center;
+  }
+
+  .rating__item {
+    display: flex;
+  }
+
+  .rating__item:first-child {
+    transform: translateX(-3rem);
+  }
+
+  .rating__item:last-child {
+    transform: translateX(3rem);
+  }
+
+  .testimonials {
+    flex-direction: row;
+    grid-column: 1/-1;
+  }
+
+  .testimonials figure {
+    max-width: 21.875rem;
+  }
+
+  .testimonials figure:nth-child(2) {
+    transform: translateY(2rem);
+  }
+  .testimonials figure:nth-child(3) {
+    transform: translateY(3rem);
+  }
+
+  .attribution {
+    position: fixed;
+    inset: auto auto 1em 1em;
+  }
+}
