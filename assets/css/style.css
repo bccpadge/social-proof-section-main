@@ -23,7 +23,7 @@
 /* !reset */
 /* !Box sizing rules */
 *,
-*:before,
+*::before,
 *::after {
   box-sizing: border-box;
 }
