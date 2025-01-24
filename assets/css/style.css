@@ -113,6 +113,7 @@ body {
     url("../images/bg-pattern-bottom-mobile.svg");
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom right;
+  align-content: center;
 }
 
 /* !utility classes */
@@ -289,6 +290,7 @@ main {
   .testimonials figure:nth-child(2) {
     transform: translateY(2rem);
   }
+
   .testimonials figure:nth-child(3) {
     transform: translateY(3rem);
   }
